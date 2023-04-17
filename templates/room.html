@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Hotel Management System - Rooms</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        body {
+            background-image: url("{{ url_for('static', filename='hotel2.jpg') }}");
+            /* Other background styles, such as size and position, can also be set here */
+        }
+    </style>
+    
+</head>
+
+<body>
+    <header>
+        <h1>Hotel Hive</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="dbms.html">Home</a></li>
+            <li><a href="room.html">Rooms</a></li>
+            <li><a href="bookings.html">Bookings</a></li>
+            <li><a href="employees.html">Employees</a></li>
+            <li><a href="payments.html">Payments</a></li>
+        </ul>
+    </nav>
+    <main>
+        <section>
+            <h2>Book a Room</h2>
+            <form action="/create" method="POST">
+                <label for="id">ID:</label>
+                <input type="number" id="id" name="id" required>
+                <label for="room-type">Room Type:</label>
+                <input type="text" id="room-type" name="room_type" required>
+                <label for="room-number">Room Number:</label>
+                <input type="number" id="room-number" name="room_number" required>
+                <label for="max-occupancy">Max Occupancy:</label>
+                <input type="number" id="max-occupancy" name="max_occupancy" required>
+                <label for="price-per-night">Price Per Night:</label>
+                <input type="number" id="price-per-night" name="price_per_night" required>
+                <button type="submit">Book Room</button>
+            </form>
+        </section>
+
+        <section>
+            <h2>Update a Room</h2>
+            <form action="/update" method="POST">
+                <label for="update-id">ID:</label>
+                <input type="number" id="update-id" name="update_id" required>
+                <label for="new-room-type">New Room Type:</label>
+                <input type="text" id="new-room-type" name="new_room_type" required>
+                <label for="room-number">Room Number:</label>
+                <input type="number" id="room-number" name="new_room_number" required>
+                <label for="new-max-occupancy">New Max Occupancy:</label>
+                <input type="number" id="new-max-occupancy" name="new_max_occupancy" required>
+                <label for="new-price-per-night">New Price Per Night:</label>
+                <input type="number" id="new-price-per-night" name="new_price_per_night" required>
+                <button type="submit">Update Room</button>
+            </form>
+        </section>
+
+        <section>
+            <h2>Delete a Room</h2>
+            <form action="/delete" method="POST">
+                <label for="delete-id">ID:</label>
+                <input type="number" id="delete-id" name="delete_id" required>
+                <button type="submit">Delete Room</button>
+            </form>
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+
+</html>

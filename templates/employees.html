@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Hotel Management System - Employees</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+  <body>
+    <header>
+      <h1>Hotel Hive</h1>
+    </header>
+    <nav>
+      <ul>
+        <li><a href="dbms.html">Home</a></li>
+        <li><a href="room.html">Rooms</a></li>
+        <li><a href="bookings.html">Bookings</a></li>
+        <li><a href="employees.html">Employees</a></li>
+        <li><a href="payments.html">Payments</a></li>
+      </ul>
+    </nav>
+    <main>
+      <section>
+      <h2>Employees</h2>
+      <form action="booking.php" method="post">
+        <label for="employee-id">Employee ID:</label>
+        <input type="text" id="employee-id" name="employee-id" required>
+        <label for="employee-name">Employee Name:</label>
+        <input type="text" id="employee-name" name="employee-name" required>
+        <label for="Position">Position:</label>
+        <input type="text" id="Position" name="Position" required>
+        <label for="Salary">Salary:</label>
+        <input type="text" id="Salary" name="Salary" required>
+
+        <button type="submit" name="submit">submit</button>
+      </form>
+    </section>
+  
+    </main>
+
+  </body>
+</html>
