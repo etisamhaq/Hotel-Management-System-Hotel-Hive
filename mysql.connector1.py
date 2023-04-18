@@ -4,7 +4,7 @@ import mysql.connector
 app = Flask(__name__)
 
 
-conn = mysql.connector.connect(host="localhost", user="root", password="atisam@sql24", database="hotel")
+conn = mysql.connector.connect(host="localhost", user="root", password="", database="hotel")
 
 @app.route("/")
 def home():
