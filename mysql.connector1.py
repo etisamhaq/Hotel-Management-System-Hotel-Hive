@@ -7,7 +7,11 @@ app = Flask(__name__)
 conn = mysql.connector.connect(host="localhost", user="root", password="", database="hotel")
 
 @app.route("/")
-def home():
+def dbms():
+    return render_template("dbms.html")
+
+@app.route("/rooms")
+def rooms():
     # Read all rooms from the database
     cursor = conn.cursor()
     cursor.execute("SELECT * FROM rooms")
@@ -16,6 +20,34 @@ def home():
 
     # Render the room.html template with the rooms data
     return render_template("room.html", rooms=rooms)
+
+@app.route("/employees") 
+def employees():
+    return render_template("employees.html")
+
+@app.route("/payments")
+def payments():
+    return render_template("payments.html")
+
+@app.route("/bookings")
+def bookings():
+    return render_template("bookings.html")
+
+@app.route("/rooms_to_dbms")
+def rooms_to_dbms():
+    return redirect(url_for("dbms"))
+
+@app.route("/rooms_to_employees")
+def rooms_to_employees():
+    return redirect(url_for("employees"))  
+
+@app.route("/rooms_to_payments")
+def rooms_to_payments():
+    return redirect(url_for("payments"))    
+
+@app.route("/rooms_to_bookings")
+def rooms_to_bookings():
+    return redirect(url_for("bookings"))
     
 
 @app.route("/create", methods=["POST"])
